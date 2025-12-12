@@ -4,14 +4,14 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Dosen d1 = new Dosen("Ratih Nur Esti Anggraini", "0000000000");
-        Dosen d2 = new Dosen("Fajar Baskoro", "0003047405");
-        Dosen d3 = new Dosen("Riyanarto Sarno", "0000000000");
+        Dosen dosen1 = new Dosen("Ratih Nur Esti Anggraini", "0000000000");
+        Dosen dosen2 = new Dosen("Fajar Baskoro", "0003047405");
+        Dosen dosen3 = new Dosen("Riyanarto Sarno", "0000000000");
        
         MataKuliah[] daftarMataKuliah = new MataKuliah[3];
-        daftarMataKuliah[0] = new MataKuliah("IF107", "Rekayasa Sistem Berbasis Pengetahuan", 3, d1, "Rabu 10.00-11.50", 3);
-        daftarMataKuliah[1] = new MataKuliah("IF105", "Pemrograman Berbasis Objek", 3, d2, "Selasa 13.30-15.20", 3);
-        daftarMataKuliah[2] = new MataKuliah("IF309", "Sistem Enterprise", 3, d3, "Kamis 13.30-15.20", 3);
+        daftarMataKuliah[0] = new MataKuliah("IF107", "Rekayasa Sistem Berbasis Pengetahuan", 3, dosen1, "Rabu 10.00-11.50", 3);
+        daftarMataKuliah[1] = new MataKuliah("IF105", "Pemrograman Berbasis Objek", 3, dosen2, "Selasa 13.30-15.20", 3);
+        daftarMataKuliah[2] = new MataKuliah("IF309", "Sistem Enterprise", 3, dosen3, "Kamis 13.30-15.20", 3);
         
         int pilihanMenu = 0;
         while (pilihanMenu != 4) {
