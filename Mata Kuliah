@@ -1,0 +1,50 @@
+public class MataKuliah {
+    private String kode;
+    private String nama;
+    private int sks;
+    private Dosen dosenPengampu;
+    private String jadwal;
+    private int kuota; 
+    private Mahasiswa[] peserta;
+    private int jumlahPeserta; 
+    
+    public MataKuliah(String kode, String nama, int sks, Dosen dosenPengampu, String jadwal, int kuota) {
+        this.kode = kode;
+        this.nama = nama;
+        this.sks = sks;
+        this.dosenPengampu = dosenPengampu;
+        this.jadwal = jadwal;
+        this.kuota = kuota; 
+        this.peserta = new Mahasiswa[this.kuota]; 
+        this.jumlahPeserta = 0;
+    }
+    
+    public String getKode() { return kode; }
+    public String getNama() { return nama; }
+    public int getSks() { return sks; }
+    public Dosen getDosenPengampu() { return dosenPengampu; }
+    public String getJadwal() { return jadwal; }
+    public int getKuota() { return kuota; } 
+    public int getJumlahPeserta() { return jumlahPeserta; }
+    
+    public boolean sudahTerdaftar(Mahasiswa m) {
+        for (int i = 0; i < this.jumlahPeserta; i++) {
+            if (peserta[i].getNrp().equals(m.getNrp())) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public boolean daftarMahasiswa(Mahasiswa m) {
+        if (sudahTerdaftar(m)) {
+            return false; 
+        }
+        if (this.jumlahPeserta < this.kuota) {
+            peserta[this.jumlahPeserta] = m;
+            this.jumlahPeserta++;
+            return true;
+        }
+        return false;
+    }
+}
